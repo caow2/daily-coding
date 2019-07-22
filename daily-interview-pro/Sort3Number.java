@@ -18,9 +18,8 @@ public class Sort3Number {
 
   /**
    * Variant of Dutch Flag Problem https://en.wikipedia.org/wiki/Dutch_national_flag_problem
-   * We can just propagate all 1s to the start of the list and all 3s to the end of the
-   * list using 3 pointers.
-   * All 2s should naturally be pushed towards the center of the array.
+   * We can just propagate all 1s to the start of the array and all 3s to the end of the
+   * array using 3 indice.
    */
   public static int[] solution(int[] list) {
     int l = 0, r = list.length - 1, i = 0;
