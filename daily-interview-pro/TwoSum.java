@@ -34,7 +34,13 @@ public class TwoSum {
    * Brute Force solution would be to try every pair of numbers to see if they
    * add up to k. This would result in O(n^2) time and O(1) space.
    *
-   * However, we can avoid duplicate work by using hashing.
+   * Another alternative would be to sort the list and use 2 pointers.
+   * Start at each end of the list and check if elements at pointers sum up to k.
+   * If larger, we decrement the right pointer. If smaller, increment left pointer.
+   * If the pointers meet, then 2 elements that sum up to k doesn't exist.
+   * O(nlogn) time and O(1) space assuming sorting doesn't take any extra space.
+   *
+   * However, we can avoid duplicate work or the sorting bottlenecks by hashing.
    * If we see a number n, we can cache k - n into a HashSet.
    * Then if we see k - n and it is in our set, we know that there are at least
    * 2 numbers that sum up to k: n and k - n.
