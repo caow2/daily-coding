@@ -18,6 +18,10 @@ public class ReverseLinkedList {
     System.out.println(reverseIterative(head));
   }
 
+  /**
+   * Keep track of the previous node for each node in order to reorder references.
+   * O(n) time, O(n) space.
+   */
   public static Node reverse(Node head) {
     return recursiveReverse(head, null);
   }
@@ -30,6 +34,14 @@ public class ReverseLinkedList {
     return newHead;
   }
 
+  /*
+   * Or directly reorder pointers in a while loop. O(n) time, O(1) space.
+   *
+   * Can also be done with a Stack to imitate the recursive calls.
+   * Logic is the same: Make the node at top of Stack point to the next Stack
+   * element. The bottom element in the Stack's next is null.
+   * The new head is the very first element that was popped. O(n) time, O(n) space.
+   */
   public static Node reverseIterative(Node head) {
     Node prev = null;
     while(head != null) {

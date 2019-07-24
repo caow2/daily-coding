@@ -29,6 +29,7 @@ public class LongestSubstring {
    * A bit vector or HashSet can be used to cache the current characters in our window.
    * Bit Vector would be easy to use if we don't care for uppercase characters or
    * s is gauranteed to have lower case.
+   * O(n) time, O(n) space.
    */
   public static int longestSubstring(String s) {
     int start = 0, end = 0, max = 0;

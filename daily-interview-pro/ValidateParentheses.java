@@ -40,6 +40,7 @@ public class ValidateParentheses {
    * Idea is to use a Stack to maintain the opening parentheses seen so far.
    * If we see a closing parentheses and the Stack is empty or the top element
    * isn't the corresponding opening parentheses, it can't be a valid String.
+   * O(n) time, O(n) space.
    */
   public static boolean balancedParentheses(String s) {
     HashMap<Character, Character> map = new HashMap<Character, Character>();
