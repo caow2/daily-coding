@@ -1,2 +1,5 @@
 # daily-coding
-Solutions for Daily Coding Problem ( https://www.dailycodingproblem.com ) &amp; Daily Interview Pro ( https://www.techseries.dev/daily )
+Solutions for the following:
+* Daily Coding Problem ( www.dailycodingproblem.com )
+* Daily Interview Pro ( www.techseries.dev/daily )
+* InterviewCake ( www.interviewcake.com )
