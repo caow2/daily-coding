@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 /*
  * You are given the root of a binary tree.
  * Invert the binary tree in place. That is, all left children should become right children,
@@ -20,7 +21,17 @@
  */
 public class InvertBinaryTree {
   public static void main(String[] args) {
+      Node root = new Node(0);
+      root.left = new Node(1);
+      root.right = new Node(2);
+      root.left.left = new Node(3);
+      root.left.right = new Node(4);
+      root.right.left = new Node(5);
 
+      System.out.println(root); // 0, 1, 3, 4, 2, 5
+      //invert(root);
+      invertIterative(root);
+      System.out.println(root); // 0, 2, 5, 1, 4, 3
   }
 
   /**
@@ -34,7 +45,7 @@ public class InvertBinaryTree {
    * O(h) where h is the height of the tree.
    * Note that h is O(n) if the tree is unbalanced.
    */
-  public void invert(Node root) {
+  public static void invert(Node root) {
     if(root == null)
       return;
     invert(root.left);
@@ -51,7 +62,7 @@ public class InvertBinaryTree {
    * By the end, every node should have had its children swapped.
    * O(n) time, O(n) space where n is the number of nodes in the binary tree.
    */
-  public void invertIterative(Node root) {
+  public static void invertIterative(Node root) {
     LinkedList<Node> q = new LinkedList<Node>();
     q.offer(root);
     while(!q.isEmpty()) {
@@ -76,5 +87,14 @@ class Node {
 
   public Node(int val) {
     this.val = val;
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder("" + val);
+    if(left != null)
+      sb.append(" " + left.toString());
+    if(right != null)
+      sb.append(" " + right.toString());
+    return sb.toString();
   }
 }
