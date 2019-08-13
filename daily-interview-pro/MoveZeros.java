@@ -49,8 +49,8 @@ public class MoveZeros {
   }
 
   private static void swap(int[] arr, int l, int r) {
-    arr[r] = (-1 * arr[r]) + arr[l]; // -r + l
-    arr[l] -= arr[r]; // l - (-r + l) = r
-    arr[r] += arr[l]; // -r + l + r = l
+    arr[l] += arr[r]; // l + r
+    arr[r] = arr[l] - arr[r]; // l + r - r = l
+    arr[l] -= arr[r]; // l + r - l = l;
   }
 }
