@@ -29,8 +29,8 @@ public class FindKth {
    *
    * Otherwise, if there are < k - 1 elements, the kth Largest is to the left of the pivot
    * if there are > k - 1 elements, kth Largest is to the right of pivot
-   * O(logn) average case, O(n) worst case time complexity
-   * Same for space complexity
+   * O(n) time average case. For poisonous input, O(n^2)
+   * O(logn) space average case. For poisonous input, O(n)
    */
    public static int quickSelect(int[] arr, int k, int start, int end) {
      int index = -1;
