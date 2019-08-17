@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  */
 public class LargestProduct {
   public static void main(String[] args) {
-    int[] arr = new int[] {-4,-4,2,8};
+    int[] arr = new int[] {-4, -4, 2, 8};
     System.out.println(largestProduct(arr));
 
     arr = new int[] {-4, 1, 3, 9, 4};
