@@ -39,17 +39,11 @@ public class FirstMissingPositive {
    * O(n) time, O(1) space
    */
   public static int firstMissing(int[] arr) {
-    // find the first positive -> otherwise it won't work for [3,4,-2,1] since
-    // converting to positives will just become [3,4,2,1] and 2 isn't missing anymore
-    int first = findFirstPos(arr);
-    if(first == -1) // no positives
-      return 1;
-
     // convert all negatives and 0 to positive.
     // 0 can't be used because it doesn't tell us if we've seen arr[i] or not
     for(int i = 0; i < arr.length; i++) {
       if(arr[i] <= 0)
-        arr[i] = first;
+        arr[i] = Integer.MAX_VALUE;
     }
 
     // go thru and switch arr[i] to negative if it's in range [1,length of arr]
@@ -68,15 +62,5 @@ public class FirstMissingPositive {
 
     // in order for [1, length] to all be negative, length + 1 can't be an element in the array
     return arr.length + 1;
-  }
-
-  private static int findFirstPos(int[] arr) {
-    int i = 0;
-    while(i < arr.length) {
-      if(arr[i] > 0)
-        return arr[i];
-      i++;
-    }
-    return -1;
   }
 }
