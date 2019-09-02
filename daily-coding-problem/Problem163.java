@@ -17,7 +17,7 @@ public class Problem163 {
     expression = new String[] {"5","3","+"};
     System.out.println(evaluate(expression));
 
-    expression = new String[] {"0", "0", "/"};
+    expression = new String[] {"0", "0", "/"}; // Divide by 0 error
     System.out.println(evaluate(expression));
   }
 
