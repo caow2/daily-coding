@@ -1,0 +1,17 @@
+This problem was asked by Twitch.
+Describe what happens when you type a URL into your browser and press Enter.
+
+When you type a URL into your browser and press Enter (for example -> www.twitch.tv)
+you are trying to send some sort of request.
+
+In order to send the request, you must first obtain the correct IP address for your URL.
+This is done by querying a DNS server for IP Address of the server that corresponds to the URL.
+
+Typically, you then establish a TCP connection using a 3 way handshake with the server.
+This involves trying to establish a connection, getting acknowledgement back from the server,
+and then finally sending your original request.
+
+On the server side, there may be a few things happening.
+For example, there may be a load balancer distributing workload across different servers.
+Once your request is processed, the data is sent back to you through the TCP connection
+and your browser renders the content.
