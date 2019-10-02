@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class unionfind {
+public class UnionFind {
   public static void main(String[] args) {
     UF uf = new UF(5);
     UFCompressed ufc = new UFCompressed(5);
