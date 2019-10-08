@@ -5,7 +5,7 @@
  *
  * Given the array [1, 2, 1, 0, 0], we can't reach the end, so return false.
  */
-public class Problem198 {
+public class Problem192 {
   public static void main(String[] args) {
     int[] arr = new int[] { 1,3,1,2,0,1};
     System.out.println(canReachEnd(arr));
