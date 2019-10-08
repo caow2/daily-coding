@@ -43,7 +43,8 @@ public class Problem201 {
    *  - max_path(triangle[1][0]) requires max_path(triangle[2][0]), max_path(triangle[2][1])
    *  - max_path(triangle[1][1]) requires max_path(triangle[2][1]), max_path(triangle[2][2])
    * It seems like we can use a dynamic programming approach to prevent recomputation.
-   * O(n) where n is the total number of elements across all arrays.
+   * O(n) time where n is the total number of elements across all arrays.
+   * O(n^2) space for the dp memo
    */
    public static int maxWeight(int[][] tri) {
      if(tri.length == 0 || tri[0].length == 0)
