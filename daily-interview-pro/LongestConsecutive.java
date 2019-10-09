@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.HashSet;
-
+import java.util.HashMap;
 /*
  * You are given an array of integers.
  *  Return the length of the longest consecutive elements sequence in the array.
@@ -12,12 +12,14 @@ import java.util.HashSet;
 public class LongestConsecutive {
   public static void main(String[] args) {
     int[] arr = new int[] {100,4,200,1,3,2};
+    System.out.println(longestOptimal(arr));
     System.out.println(longestOptimized(arr));
     System.out.println(longest(arr));
 
     arr = new int[] {100,103,4,102,1,3,2,101,104};
     System.out.println(longest(arr));
     System.out.println(longestOptimized(arr));
+    System.out.println(longestOptimal(arr));
   }
 
   /**
@@ -67,6 +69,32 @@ public class LongestConsecutive {
         uf.union(num, num - 1);
        if(seen.contains(num + 1))
         uf.union(num, num + 1);
+     }
+
+     int longest = 0;
+     for(int i : uf.size) {
+       longest = Math.max(longest, i);
+     }
+     return longest;
+   }
+
+   /**
+    * Optimized from O(n + max(arr[i])) to O(n).
+    * If we just map each arr[i] to its index, we can reduce the need to have
+    * a whole range of numbers.
+    * union(index for arr[i], index for arr[i + 1]) ...
+    * However, we need to track the indices for each arr[i] -> HashMap
+    * since we are no longer working with the values of each arr[i] in the UnionFind
+    */
+   public static int longestOptimal(int[] arr) {
+     HashMap<Integer, Integer> map = new HashMap<>(); // value, index
+     UnionFind uf = new UnionFind(arr.length);
+     for(int i = 0; i < arr.length; i++) {
+       map.put(arr[i], i);
+       if(map.get(arr[i] - 1) != null)
+        uf.union(i, map.get(arr[i] - 1));
+       if(map.get(arr[i] + 1) != null)
+        uf.union(i, map.get(arr[i] + 1));
      }
 
      int longest = 0;
