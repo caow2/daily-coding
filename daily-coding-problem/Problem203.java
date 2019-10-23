@@ -50,6 +50,7 @@ public class Problem203 {
    *  - Left > Right -> Mid > Left -> smallest is to right (Left to Mid is a shifted ascending sequence)
    *                    Mid < Left -> smallest is to the left
    * O(log n)
+   * Outputs the element, not the index
    */
    public static int optimizedFindMin(int[] arr) {
      int left = 0, right = arr.length - 1;
